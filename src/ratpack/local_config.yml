@@ -1,0 +1,17 @@
+database:
+
+    # the name of your JDBC driver
+    driverClass: com.mysql.jdbc.Driver
+
+    # Use MySQL 5.x InnoDB dialect for hibernate
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+    # the username
+    user: kaleido
+
+    # the password
+    password: "password"
+
+    # the JDBC URL
+    url: jdbc:mysql://vagrant.kaleido.io:3306/kaleido

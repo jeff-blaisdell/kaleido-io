@@ -1,4 +1,7 @@
 .gradle
+*.iml
+*.ipr
+*.iws
 build/
 
 # Ignore Gradle GUI config
