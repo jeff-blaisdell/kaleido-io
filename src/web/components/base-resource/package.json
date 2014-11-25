@@ -1,0 +1,5 @@
+{
+    "name": "base-resource",
+    "description": "A base resource module defining various http interceptors.",
+    "main": "base-resource.js"
+}

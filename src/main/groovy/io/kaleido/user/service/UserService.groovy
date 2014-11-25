@@ -1,18 +1,21 @@
 package io.kaleido.user.service
 
-import io.kaleido.user.entity.User
+import io.kaleido.user.api.User
+import io.kaleido.user.entity.UserEntity
 import rx.Observable
 
 interface UserService {
 
-    Observable<List<User>> listUsers()
+    Observable<List<UserEntity>> listUsers()
 
-    Observable<User> findUser(String userGuid)
+    Observable<UserEntity> findUser(String userGuid)
 
-    Observable<User> createUser(User user)
+    Observable<UserEntity> createUser(User user)
 
-    Observable<User> updateUser(User user)
+    Observable<UserEntity> updateUser(User user)
 
-    Observable<User> deleteUser(User user)
+    Observable<UserEntity> updateUserPassword(User user)
+
+    Observable<UserEntity> deleteUser(User user)
 
 }

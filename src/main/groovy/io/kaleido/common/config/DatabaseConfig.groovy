@@ -1,4 +1,4 @@
-package io.kaleido.common.api
+package io.kaleido.common.config
 
 import com.google.common.collect.Maps
 import javax.validation.constraints.NotNull;

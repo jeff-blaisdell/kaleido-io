@@ -1,6 +1,6 @@
-package io.kaleido.common.api
+package io.kaleido.common.config
 
-class HibernateEntities {
+class HibernateEntitiesConfig {
 
     /**
      * Entities which should be registered with Hibernate.

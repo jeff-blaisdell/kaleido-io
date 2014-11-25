@@ -1,0 +1,5 @@
+{
+    "name": "date-conversion-provider",
+    "description": "A provider that handles the serialization / deserialization of dates.",
+    "main": "date-conversion-provider.js"
+}

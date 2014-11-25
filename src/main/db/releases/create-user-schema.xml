@@ -22,30 +22,18 @@
             <column name="email" type="VARCHAR(100)">
                 <constraints nullable="false" unique="true"/>
             </column>
-            <column name="birth_date" type="DATE">
+            <column name="birth_date" type="DATETIME">
                 <constraints nullable="false"/>
             </column>
             <column name="password" type="VARCHAR(100)">
                 <constraints nullable="false"/>
             </column>
-            <column name="created_date" type="DATETIME" />
-            <column name="last_update_date" type="DATETIME" />
-        </createTable>
-    </changeSet>
-
-    <changeSet author="jeff-blaisdell" id="create-session-table">
-        <createTable tableName="session">
-            <column name="session_id" type="BIGINT" autoIncrement="true">
-                <constraints nullable="false" primaryKey="true"/>
+            <column name="created_date" type="DATETIME">
+                <constraints nullable="false"/>
             </column>
-            <column name="session_guid" type="VARCHAR(100)">
-                <constraints nullable="false" unique="true"/>
+            <column name="last_update_date" type="DATETIME">
+                <constraints nullable="false"/>
             </column>
-            <column name="user_id" type="BIGINT">
-                <constraints nullable="false" references="user(user_id)" foreignKeyName="user_session_fk"/>
-            </column>
-            <column name="expiration_date" type="DATETIME" />
-            <column name="created_date" type="DATETIME" />
         </createTable>
     </changeSet>
 
@@ -60,9 +48,28 @@
             <column name="role_description" type="VARCHAR(200)">
                 <constraints nullable="true"/>
             </column>
-            <column name="created_date" type="DATETIME" />
-            <column name="last_update_date" type="DATETIME" />
+            <column name="created_date" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_update_date" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
+    </changeSet>
+
+    <changeSet author="jeff-blaisdell" id="create-roles">
+        <insert tableName="role">
+            <column name="role_name" value="ROLE_REGISTERED_USER"/>
+            <column name="role_description" value="Basic role for a registered user."/>
+            <column name="created_date" value="2014-11-28 00:00:00"/>
+            <column name="last_update_date" value="2014-11-28 00:00:00"/>
+        </insert>
+        <insert tableName="role">
+            <column name="role_name" value="ROLE_ADMIN_USER"/>
+            <column name="role_description" value="Role for an authenticated admin user."/>
+            <column name="created_date" value="2014-11-28 00:00:00"/>
+            <column name="last_update_date" value="2014-11-28 00:00:00"/>
+        </insert>
     </changeSet>
 
     <changeSet author="jeff-blaisdell" id="create-user-role-table">
@@ -76,8 +83,61 @@
             <column name="role_id" type="BIGINT">
                 <constraints nullable="false" references="role(role_id)" foreignKeyName="role_user_role_fk"/>
             </column>
-            <column name="created_date" type="DATETIME" />
-            <column name="last_update_date" type="DATETIME" />
+        </createTable>
+    </changeSet>
+
+    <changeSet author="jeff-blaisdell" id="create-address-table">
+        <createTable tableName="address">
+            <column name="address_id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="address1" type="VARCHAR(200)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="address2" type="VARCHAR(200)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="address3" type="VARCHAR(200)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="city" type="VARCHAR(200)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="state" type="VARCHAR(200)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="postal_code" type="VARCHAR(40)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="country_code" type="VARCHAR(5)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="created_date" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_update_date" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="jeff-blaisdell" id="create-user-address-table">
+        <createTable tableName="user_address">
+            <column name="user_address_id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false" references="user(user_id)" foreignKeyName="user_user_address_fk"/>
+            </column>
+            <column name="address_id" type="BIGINT">
+                <constraints nullable="false" references="address(address_id)" foreignKeyName="address_user_address_fk"/>
+            </column>
+            <column name="created_date" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_update_date" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
     </changeSet>
 

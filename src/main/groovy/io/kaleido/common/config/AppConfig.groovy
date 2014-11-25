@@ -1,12 +1,16 @@
-package io.kaleido.common.api
+package io.kaleido.common.config
 
 import javax.validation.constraints.NotNull
 
 class AppConfig {
 
+    /**
+     * General Auth configuration
+     */
     @NotNull
-    Integer bcryptRounds
+    AuthConfig auth
 
     @NotNull
     DatabaseConfig database
+
 }

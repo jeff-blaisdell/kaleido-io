@@ -14,6 +14,7 @@ The following are the primary technologies found in this project.
 ### Getting Started
 ##### Prerequisites
 * Java 8 - _Needed to run Rat Pack._
+* Java JCE - _Java Cryptographic Extension needs to be installed to support strong encryption._
 * Gradle - _Needed for running project build tasks._
 * Vagrant - _Needed to a VM containing app dependencies such as database._
 

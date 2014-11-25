@@ -1,0 +1,5 @@
+{
+    "name": "kaleido-templates",
+    "description": "A stub angular module that will be populated by the ngtemplate loader.",
+    "main": "kaleido-templates.js"
+}

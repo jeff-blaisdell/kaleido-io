@@ -1,0 +1,5 @@
+{
+    "name": "user-resource",
+    "description": "An http resource for the User API.",
+    "main": "user-resource.js"
+}

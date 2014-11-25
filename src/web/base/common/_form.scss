@@ -1,0 +1,26 @@
+.has-errors {
+    label {
+        color: $brand-danger;
+    }
+
+    input {
+        border: 1px solid $brand-danger;
+    }
+
+    input::-webkit-input-placeholder { /* WebKit browsers */
+        color:    $brand-danger;
+        opacity:  .75;
+    }
+    input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:    $brand-danger;
+        opacity:  .75;
+    }
+    input::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:    $brand-danger;
+        opacity:  .75;
+    }
+    input:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color:    $brand-danger;
+        opacity:  .75;
+    }
+}

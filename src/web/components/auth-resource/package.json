@@ -1,0 +1,5 @@
+{
+    "name": "auth-resource",
+    "description": "An http resource for the Authentication.",
+    "main": "auth-resource.js"
+}

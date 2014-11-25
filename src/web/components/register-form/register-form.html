@@ -1,0 +1,44 @@
+<form role="form" name="registerForm">
+    <div class="form-group" ng-class="{ 'has-errors': registerForm.firstName.$invalid && form.submitted }">
+        <label for="firstNameInput">First Name</label>
+        <input id="firstNameInput" type="text" name="firstName" ng-model="user.firstName" ng-required="true" class="form-control" placeholder="First Name">
+    </div>
+    <div class="form-group" ng-class="{ 'has-errors': registerForm.lastName.$invalid && form.submitted }">
+        <label for="lastNameInput">Last Name</label>
+        <input id="lastNameInput" type="text" name="lastName" ng-model="user.lastName" ng-required="true" class="form-control" placeholder="Last Name">
+    </div>
+    <div class="form-group" ng-class="{ 'has-errors': registerForm.email.$invalid && form.submitted }">
+        <label for="emailInput">Email address</label>
+        <input id="emailInput" type="email" name="email" ng-model="user.email" ng-required="true" class="form-control" placeholder="Email">
+    </div>
+    <div class="form-group" ng-class="{ 'has-errors': registerForm.birthDate.$invalid && form.submitted }">
+        <label for="birthDateInput">Birth Date</label>
+        <input id="birthDateInput" type="date" name="birthDate" ng-model="user.birthDate" ng-required="true" class="form-control" placeholder="Birth Date">
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-errors': registerForm.password.$invalid && form.submitted }">
+        <label for="passwordInput">Password</label>
+        <input id="passwordInput"
+               type="password"
+               name="password"
+               ng-model="user.password"
+               ng-required="true"
+               ng-minlength="6"
+               ng-maxlength="100"
+               class="form-control"
+               placeholder="Password">
+    </div>
+    <div class="form-group" ng-class="{ 'has-errors': registerForm.confirmPassword.$invalid && form.submitted }">
+        <label for="confirmPasswordInput">Confirm Password</label>
+        <input id="confirmPasswordInput"
+               type="password"
+               name="confirmPassword"
+               ng-model="user.confirmPassword"
+               ng-required="true"
+               ng-minlength="6"
+               ng-maxlength="100"
+               class="form-control"
+               placeholder="Confirm Password">
+    </div>
+    <button ng-click="register()" class="btn btn-primary" ng-disable="registerForm.$invalid || form.submitting">Join</button>
+</form>

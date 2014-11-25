@@ -2,7 +2,7 @@ package io.kaleido.common.provider
 
 import com.google.inject.Provider
 import groovy.util.logging.Slf4j
-import io.kaleido.common.api.AppConfig
+import io.kaleido.common.config.AppConfig
 import org.yaml.snakeyaml.Yaml
 
 @Slf4j

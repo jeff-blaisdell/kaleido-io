@@ -1,0 +1,5 @@
+{
+    "name": "register-form",
+    "description": "A component to gather and persist registration information.",
+    "main": "register-form.js"
+}

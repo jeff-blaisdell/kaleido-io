@@ -1,3 +1,5 @@
+
+# Database connection configuration
 database:
 
     # the name of your JDBC driver
@@ -5,7 +7,7 @@ database:
 
     # Use MySQL 5.x InnoDB dialect for hibernate
     properties:
-      hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
     # the username
     user: kaleido
@@ -16,4 +18,36 @@ database:
     # the JDBC URL
     url: jdbc:mysql://vagrant.kaleido.io:3306/kaleido
 
-bcryptRounds: 10
+# General auth configuration
+auth:
+
+    # The number of rounds bcrypt should encrypt password
+    bcryptRounds: 10
+
+    loginUrl: app/auth/signin
+
+    authCallbackUrl: app/auth
+
+    security:
+
+        pathExclusions:
+            - /scripts/*
+            - /styles/*
+            - /app/auth/register
+            - /app/auth/signin
+
+        pathRestrictions:
+            - path: /
+              restrict:
+                - method: GET
+                  roles:
+                   - ROLE_REGISTERED_USER
+
+            - path: /api/user
+              restrict:
+                - method: GET
+                  roles:
+                   - ROLE_ADMIN_USER
+                - method: POST
+                  roles:
+                   - PERMIT_ALL

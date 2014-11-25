@@ -6,6 +6,8 @@
 build/
 .idea/
 *.deb
+node_modules/
+src/ratpack/public/
 
 *~
 *#

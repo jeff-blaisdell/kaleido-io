@@ -3,10 +3,9 @@ package io.kaleido.common.provider
 import com.google.inject.Inject
 import com.google.inject.Provider
 import groovy.util.logging.Slf4j
-import io.kaleido.common.api.AppConfig
-import io.kaleido.common.api.DatabaseConfig
-import io.kaleido.common.api.HibernateEntities
-import io.kaleido.user.entity.User
+import io.kaleido.common.config.AppConfig
+import io.kaleido.common.config.DatabaseConfig
+import io.kaleido.common.config.HibernateEntitiesConfig
 import org.hibernate.cfg.AvailableSettings
 import org.hibernate.cfg.Configuration
 
@@ -14,10 +13,10 @@ import org.hibernate.cfg.Configuration
 class HibernateConfigurationProvider implements Provider<Configuration> {
 
     private final DatabaseConfig database
-    private final HibernateEntities hibernateEntities
+    private final HibernateEntitiesConfig hibernateEntities
 
     @Inject
-    HibernateConfigurationProvider(AppConfig appConfig, HibernateEntities hibernateEntities) {
+    HibernateConfigurationProvider(AppConfig appConfig, HibernateEntitiesConfig hibernateEntities) {
         this.database = appConfig.database
         this.hibernateEntities = hibernateEntities
 

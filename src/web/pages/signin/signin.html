@@ -1,0 +1,35 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h1>Sign In</h1>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form role="form" name="signinForm" method="POST">
+                <div class="form-group">
+                    <label for="usernameInput">Email address</label>
+                    <input id="usernameInput" type="email" name="username" ng-model="user.email" class="form-control" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="passwordInput">Password</label>
+                    <input id="passwordInput" type="password" name="password" ng-model="user.password" class="form-control" placeholder="Password">
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Remember me?
+                    </label>
+                </div>
+                <button ng-click="signin()" class="btn btn-primary">Submit</button>
+            </form>
+            <p>
+                <a ui-sref="register" class="pull-right">New to us? Create an Account.</a>
+            </p>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
