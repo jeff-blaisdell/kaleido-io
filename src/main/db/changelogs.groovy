@@ -1,5 +1,5 @@
 databaseChangeLog {
 
     // v.0.0.1
-    include(file: 'src/main/db/releases/create-user-table.xml')
+    include(file: 'src/main/db/releases/create-user-schema.xml')
 }
