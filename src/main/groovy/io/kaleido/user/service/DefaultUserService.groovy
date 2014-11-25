@@ -16,11 +16,28 @@ class DefaultUserService implements UserService {
         this.userDao = userDao
     }
 
+    @Override
+    Observable<List<User>> listUsers() {
+        return userDao.listUsers()
+    }
+
+    @Override
     Observable<User> findUser(String userGuid) {
         return userDao.findUser(userGuid)
     }
 
-    Observable<List<User>> listUsers() {
-        return userDao.listUsers()
+    @Override
+    Observable<User> createUser(User user) {
+        return userDao.createUser(user)
+    }
+
+    @Override
+    Observable<User> updateUser(User user) {
+        return userDao.updateUser(user)
+    }
+
+    @Override
+    Observable<User> deleteUser(User user) {
+        return userDao.deleteUser(user)
     }
 }

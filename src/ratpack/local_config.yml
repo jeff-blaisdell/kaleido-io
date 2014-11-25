@@ -15,3 +15,5 @@ database:
 
     # the JDBC URL
     url: jdbc:mysql://vagrant.kaleido.io:3306/kaleido
+
+bcryptRounds: 10
