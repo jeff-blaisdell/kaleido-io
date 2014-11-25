@@ -1,0 +1,5 @@
+require File.expand_path('../site-cookbooks.rb', __FILE__)
+
+source "http://api.berkshelf.com"
+
+site_cookbooks(SITE_COOKBOOKS)

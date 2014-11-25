@@ -1,0 +1,8 @@
+{
+  "kaleido": {
+    "env": "local"
+  },
+  "run_list": [
+    "role[kaleido-server]"
+  ]
+}

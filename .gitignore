@@ -1,8 +1,31 @@
+.DS_Store
 .gradle
 *.iml
 *.ipr
 *.iws
 build/
+.idea/
+*.deb
+
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+pkg/
+
+# Berkshelf
+.vagrant
+/cookbooks
+Berksfile.lock
+
+# Bundler
+Gemfile.lock
+bin/*
+.bundle/*
+
+
 
 # Ignore Gradle GUI config
 gradle-app.setting
